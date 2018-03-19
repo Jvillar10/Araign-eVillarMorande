@@ -5,7 +5,8 @@ QT += qml quick widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    jeu.cpp
+    jeu.cpp \
+    text.cpp
 
 RESOURCES += qml.qrc
 
@@ -16,4 +17,5 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    jeu.h
+    jeu.h \
+    text.h
