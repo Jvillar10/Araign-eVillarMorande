@@ -19,3 +19,5 @@ include(deployment.pri)
 HEADERS += \
     jeu.h \
     text.h
+
+FORMS +=
