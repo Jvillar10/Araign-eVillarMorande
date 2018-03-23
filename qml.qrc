@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
+        <file>SecondaryForm.qml</file>
+        <file>SecondaryFormForm.ui.qml</file>
+        <file>tablero.jpg</file>
     </qresource>
 </RCC>

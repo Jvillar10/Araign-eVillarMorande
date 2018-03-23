@@ -26,14 +26,14 @@ ApplicationWindow {
     MainForm {
         anchors.fill: parent
         //button1.onClicked: messageDialog.show(qsTr("Bonne chance..."))
-        button1.onClicked: juego.show();
+        button1.onClicked:juego.show();
         button2.onClicked: Qt.quit();
     }
 
     /*function createWindow(){
         var component = Qt.createComponent("Jeu.qml");
         console.log("Component Status", component.status, component.errorString());
-        var window = component.createObjet(root, {"x":100,"y":300);
+       var window = component.createObjet(root, {"x":100,"y":300);
         window.show();
     }*/
 
@@ -41,10 +41,13 @@ ApplicationWindow {
         id: juego
         width:640
         height:480
-       title: qsTr("Jeu active")
+        title: qsTr("Jeu active")
+
+    SecondaryForm {
+        anchors.fill: parent
     }
-
-
+}
+}
    /*MessageDialog {
         id: messageDialog
         title: qsTr("On commence")
@@ -55,4 +58,4 @@ ApplicationWindow {
         }
     }
 }*/
-}
+
