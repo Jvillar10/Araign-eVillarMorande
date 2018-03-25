@@ -6,7 +6,9 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     jeu.cpp \
-    text.cpp
+    text.cpp \
+    jetons.cpp \
+    joueur.cpp
 
 RESOURCES += qml.qrc
 
@@ -18,6 +20,8 @@ include(deployment.pri)
 
 HEADERS += \
     jeu.h \
-    text.h
+    text.h \
+    jetons.h \
+    joueur.h
 
 FORMS +=

@@ -10,8 +10,8 @@ Item {
     property alias button2: buttonSalir
 
     RowLayout {
-        anchors.verticalCenterOffset: 0
-        anchors.horizontalCenterOffset: 1
+        anchors.verticalCenterOffset: -184
+        anchors.horizontalCenterOffset: -51
         anchors.centerIn: parent
 
         Button {
