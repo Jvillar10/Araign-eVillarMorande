@@ -47,41 +47,66 @@ void Jeu::premiere_Etape(int slot)
     jetonsListe[tours_compt] = jetons(tours_compt % 2, slot) ;
 }
 
-/*void Jeu::seconde_Etape(int slot)
+void Jeu::seconde_Etape(int slot)
 {
     bool existsalready = false, occupiedalready = false ;
     for(int i = 0 ; i < 6 ; i++)
     {
-       if(slot == pieceListe[i].getPosition() && tours_compt % 2 == i % 2)
+       if(slot == jetonsListe[i].getPosition() && tours_compt % 2 == i % 2)
        {
            existsalready = true ;
            for(int j = 0 ; j < 6 ; j++)
            {
-               if(pieceListe[j].getSelected() == true)
+               if(jetonsListe[j].getSelected() == true)
                {
-                   pieceListe[j].setSelected(false) ;
+                   jetonsListe[j].setSelected(false) ;
                }
            }
-           pieceListe[i].setSelected(true) ;
+           jetonsListe[i].setSelected(true) ;
         }
     }
     if (existsalready == false)
     {
         for(int k = 0 ; k < 6 && k < tours_compt ; k++)
         {
-            if(slot == pieceListe[k].getPosition()) occupiedalready = true ;
+            if(slot == jetonsListe[k].getPosition()) occupiedalready = true ;
         }
         if(occupiedalready == false)
         {
             for(int l = 0 ; l < 6 ; l++)
             {
-                if(pieceListe[l].getSelected() == true)
+                if(jetonsListe[l].getSelected() == true)
                 {
-                    pieceListe[l].setPosition(slot) ;
+                    jetonsListe[l].setPosition(slot) ;
                     tours_compt++ ;
                 }
             }
         }
     }
-}*/
+}
 
+void Jeu::victoire()
+{
+    int i ;
+    int* caseJ1 = new int[3] ;
+    int* caseJ2 = new int[3] ;
+    if(tours_compt >= 5)
+    {
+        for(int j = 0 ; j < 6 && j < tours_compt ; j++)
+        {
+            i = j / 2 ;
+            if(j % 2 == 0)
+            {
+                caseJ1[i] =jetonsListe[j].getPosition() ;
+            }
+            else
+            {
+                caseJ2[i] = jetonsListe[j].getPosition() ;
+            }
+        }
+        /*if (tours_compt % 2 == 1) testVictoire(caseJ1) ;
+        else testVictoire(caseJ2) ;
+        delete[] caseJ1 ;
+        delete[] caseJ2;*/
+    }
+}
