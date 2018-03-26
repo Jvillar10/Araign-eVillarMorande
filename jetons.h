@@ -15,7 +15,7 @@ public:
     void setSelected(bool selection) ;
 private:
     int joueur, position ; //recoivent les numéros
-    bool jeton_Select ;
+    bool jeton_Select;
 };
 
 #endif // JETONS_H
