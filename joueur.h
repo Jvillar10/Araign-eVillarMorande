@@ -8,6 +8,9 @@ class Joueur
 public:
     Joueur(string nom_Joueur, bool etat = false);
     string getNom();
+    void activation_Joueur();
+    void desactivation_Joueur();
+    bool etat_Actif();
 private:
     bool Joueur_actuel;
     string nom;
