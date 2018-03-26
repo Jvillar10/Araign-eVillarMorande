@@ -9,3 +9,31 @@ Jeu::Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent): QObject(paren
     victoire = false ;
 }
 
+/*void Jeu::pilotage(int slot)
+{
+    bool existsalready = false;
+    if(victoire_jeu == false)
+    {
+        if (tours_compt < 6)
+        {
+            for(int i = 0 ; i < tours_compt ; i++)
+            {
+                if(slot == pieceListe[i].getPosition()) existsalready = true ;
+            }
+            if (existsalready == false)
+            {
+                premiere_Etape(slot) ;
+                tours_compt++ ;
+            }
+        }
+        else
+        {
+            jeu::seconde_Etape(slot) ;
+        }
+        victoire() ;
+        changePos() ;
+        changeBord() ;
+        changeVis() ;
+        changeTexte() ;
+    }
+}*/

@@ -7,6 +7,9 @@ class Joueur
 {
 public:
     Joueur(string nom_Joueur, bool etat = false);
+    void activation_Joueur() ;
+    void desactivation_Joueur() ;
+    bool etat_Actif() ;
     string getNom();
 private:
     bool Joueur_actuel;
