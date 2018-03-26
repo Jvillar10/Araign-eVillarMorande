@@ -7,8 +7,8 @@ Item {
     //VER SI FUNCIONA
     Text {
         id: jouer1
-        x: 460
-        y:80
+        x: 506
+        y: 220
         width: 40
         height: 40
         text: qsTr("Jouer1")
@@ -23,8 +23,8 @@ Item {
 
     Text {
         id: jouer2
-        x: 460
-        y:120
+        x: 506
+        y: 272
         width: 40
         height: 40
         text: qsTr("Jouer2")
@@ -40,7 +40,7 @@ Item {
     Rectangle {
         id: couleurJ1
         x: 425
-        y:85
+        y: 225
         width: 30
         height: 30
         color: "#cccccc"
@@ -51,7 +51,7 @@ Item {
     Rectangle {
         id: couleurJ2
         x: 425
-        y:125
+        y: 277
         width: 30
         height: 30
         color: "#000000"
@@ -62,16 +62,16 @@ Item {
     Rectangle {
         id: rectPhoto
         x: 24
-        y:123
-        width:360
-        height:319
-        color:"#cccccc"
+        y: 123
+        width: 360
+        height: 319
+        color: "#cccccc"
         Image {
             id: image1
             x: 0
             y: 1
-            width:360
-            height:318
+            width: 360
+            height: 318
             fillMode: Image.Stretch
             source: "tablero.jpg"
 
@@ -236,8 +236,6 @@ Item {
                     visible: false
                 }
             }
-
         }
-
     }
 }
