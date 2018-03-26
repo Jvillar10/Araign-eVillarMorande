@@ -10,7 +10,7 @@ public:
     void activation_Joueur() ;
     void desactivation_Joueur() ;
     bool etat_Actif() ;
-    string getNom();
+    string getNom(); 
 private:
     bool Joueur_actuel;
     string nom;

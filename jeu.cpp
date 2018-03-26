@@ -1,4 +1,8 @@
 #include "jeu.h"
+//#include "text.h"
+#include "jetons.h"
+#include <string>
+#include <QObject>
 #include <iostream>
 using namespace std;
 
@@ -6,19 +10,19 @@ Jeu::Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent): QObject(paren
 {
     tours_compt = 0 ;
     jetonsListe = new jetons[6] ;
-    victoire = false ;
+    win_game = false ;
 }
 
-/*void Jeu::pilotage(int slot)
+void Jeu::pilotage(int slot)
 {
     bool existsalready = false;
-    if(victoire_jeu == false)
+    if(win_game == false)
     {
         if (tours_compt < 6)
         {
             for(int i = 0 ; i < tours_compt ; i++)
             {
-                if(slot == pieceListe[i].getPosition()) existsalready = true ;
+                if(slot == jetonsListe[i].getPosition()) existsalready = true ;
             }
             if (existsalready == false)
             {
@@ -28,12 +32,56 @@ Jeu::Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent): QObject(paren
         }
         else
         {
-            jeu::seconde_Etape(slot) ;
+            Jeu::seconde_Etape(slot) ;
         }
         victoire() ;
-        changePos() ;
+        /*changePos() ;
         changeBord() ;
         changeVis() ;
-        changeTexte() ;
+        changeTexte() ;*/
+    }
+}
+
+void Jeu::premiere_Etape(int slot)
+{
+    jetonsListe[tours_compt] = jetons(tours_compt % 2, slot) ;
+}
+
+/*void Jeu::seconde_Etape(int slot)
+{
+    bool existsalready = false, occupiedalready = false ;
+    for(int i = 0 ; i < 6 ; i++)
+    {
+       if(slot == pieceListe[i].getPosition() && tours_compt % 2 == i % 2)
+       {
+           existsalready = true ;
+           for(int j = 0 ; j < 6 ; j++)
+           {
+               if(pieceListe[j].getSelected() == true)
+               {
+                   pieceListe[j].setSelected(false) ;
+               }
+           }
+           pieceListe[i].setSelected(true) ;
+        }
+    }
+    if (existsalready == false)
+    {
+        for(int k = 0 ; k < 6 && k < tours_compt ; k++)
+        {
+            if(slot == pieceListe[k].getPosition()) occupiedalready = true ;
+        }
+        if(occupiedalready == false)
+        {
+            for(int l = 0 ; l < 6 ; l++)
+            {
+                if(pieceListe[l].getSelected() == true)
+                {
+                    pieceListe[l].setPosition(slot) ;
+                    tours_compt++ ;
+                }
+            }
+        }
     }
 }*/
+

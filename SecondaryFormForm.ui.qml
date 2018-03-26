@@ -4,6 +4,61 @@ Item {
     width: 640
     height: 480
 
+    //VER SI FUNCIONA
+    Text {
+        id: jouer1
+        x: 460
+        y:80
+        width: 40
+        height: 40
+        text: qsTr("Jouer1")
+        font.bold: true
+        font.family: "Timnes New Roman"
+        fontSizeMode: Text.FixedSize
+        textFormat: Text.AutoText
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 30
+    }
+
+    Text {
+        id: jouer2
+        x: 460
+        y:120
+        width: 40
+        height: 40
+        text: qsTr("Jouer2")
+        font.bold: true
+        font.family: "Timnes New Roman"
+        fontSizeMode: Text.FixedSize
+        textFormat: Text.AutoText
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 30
+    }
+
+    Rectangle {
+        id: couleurJ1
+        x: 425
+        y:85
+        width: 30
+        height: 30
+        color: "#cccccc"
+        border.color: "#000000"
+        border.width: 4
+    }
+
+    Rectangle {
+        id: couleurJ2
+        x: 425
+        y:125
+        width: 30
+        height: 30
+        color: "#000000"
+        border.color: "#cccccc"
+        border.width: 4
+    }
+
     Rectangle {
         id: rectPhoto
         x: 24

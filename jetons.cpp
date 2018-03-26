@@ -1,6 +1,6 @@
 #include "jetons.h"
 #include <iostream>
-u	sing namespace std ;
+using namespace std ;
 
 jetons::jetons()
 {
@@ -10,7 +10,7 @@ jetons::jetons()
 
 jetons::jetons(int num_joueur, int num_position)
 {
-    if(num_joueur == 1 || num_joueur == 2) joueur = num_joueur ;
+    if(num_joueur == 1 || num_joueur == 0) joueur = num_joueur ;
     if(num_position <= 8 && num_position >= 0) position = num_position ;
     jeton_Select = false ;
 }
@@ -24,25 +24,25 @@ jetons::jetons(int num_joueur)
 void jetons::setPosition(int num_position)
 {
     if(num_position <= 8 && num_position >= 0) position = num_position ;
-    piece_Select = false ;
+    jeton_Select = false ;
 }
 
-int piece::getJoueur()
+int jetons::getJoueur()
 {
     return joueur ;
 }
 
-int piece::getPosition()
+int jetons::getPosition()
 {
     return position ;
 }
 
-bool piece::getSelected()
+bool jetons::getSelected()
 {
-    return piece_Select ;
+    return jeton_Select ;
 }
 
-void piece::setSelected(bool select)
+void jetons::setSelected(bool select)
 {
-    piece_Select = select ;
+    jeton_Select = select ;
 }
