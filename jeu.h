@@ -2,7 +2,7 @@
 #define JEU_H
 #include "jetons.h"
 #include "joueur.h"
-//#include "text.h"
+#include "text.h"
 #include <string>
 #include <QObject>
 using namespace std;
@@ -14,28 +14,27 @@ class Jeu:public QObject
     Q_OBJECT
 public:
     explicit Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent = 0);
-    Q_INVOKABLE void pilotage(int slot);
+    Q_INVOKABLE void game(int slot);
+    Q_INVOKABLE QList<QString> readPos() ; //liste des positions utilisées
+    Q_PROPERTY(QList<QString> posQML READ readPos NOTIFY changePos) ;
+    Q_INVOKABLE QList<bool> readVis() ;//positions visibles
+    Q_PROPERTY(QList<bool> visQML READ readVis NOTIFY changeVis) ;
+    Q_INVOKABLE int getTour() ;
+    Q_INVOKABLE QString currentText() ;
+    Q_PROPERTY(QString currentText READ currentText NOTIFY changeTexte) ;
     void premiere_Etape(int slot) ; //gère la parti quand les 6 jetons ne sont pas encore mis
     void seconde_Etape(int slot) ; //gère la suite
-    Q_INVOKABLE QList<QString> readPos() ; //liste des positions utilisées
-    //Q_INVOKABLE QList<QString> readBord() ;
-    Q_INVOKABLE QList<bool> readVis() ;
-    Q_PROPERTY(QList<QString> gameQML READ readPos NOTIFY changePos) ; //avec les mains : a chaque fois qu'on appelera depuis une fonction la signal "gameChanged", on appelera la fonction "readPos" (qui rend une Qliste actualisé des positions des jetons) et cette liste sera utilisé par l'interface sous le nom "gameQML"
-    //Q_PROPERTY(QList<QString> game2QML READ readBord NOTIFY changeBord) ;
-    Q_PROPERTY(QList<bool> game3QML READ readVis NOTIFY changeVis) ;
-    Q_INVOKABLE int getTour() ;
-    //Q_PROPERTY(QString currentText READ currentText NOTIFY changeTexte) ;
     void victoire() ;
+    bool testVictoire(int *pPos);
 
 signals:
-    void changePos() ; //signal qui sert à communiquer avec le jeu
-    void changeBord() ;
+    void changePos() ;
     void changeVis() ;
     void changeTexte() ;
 
 private:
     int tours_compt;
-    //text messages;
+    text message;
     Joueur Joueur1, Joueur2;
     jetons *jetonsListe;
     bool win_game;

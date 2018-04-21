@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    Jeu araigne("Joueur 1", "Joueur 2");
+    Jeu araigne("Chile", "Argentina");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("vueGame", &araigne) ;//on envoie int pour pouvoir appeler la fonction depuis l'interface

@@ -6,8 +6,8 @@ import QtQuick.Window 2.2
 Window {
     visible: true
     width: 800
-    height: 600
-    title: qsTr("Morpion")
+    height: 500
+    title: qsTr("ARAIGNEE")
 
     MainForm {
     anchors.rightMargin: -27
@@ -16,31 +16,31 @@ Window {
     anchors.topMargin: 0
     anchors.fill: parent
     mouseArea1 {
-        onClicked: vueGame.pilotage(0);
+        onClicked: vueGame.game(0);
         }
     mouseArea2{
-        onClicked: vueGame.pilotage(1);
+        onClicked: vueGame.game(1);
     }
     mouseArea3 {
-        onClicked: vueGame.pilotage(2);
+        onClicked: vueGame.game(2);
         }
     mouseArea4{
-        onClicked: vueGame.pilotage(3);
+        onClicked: vueGame.game(3);
     }
     mouseArea5 {
-        onClicked: vueGame.pilotage(4);
+        onClicked: vueGame.game(4);
         }
     mouseArea6{
-        onClicked: vueGame.pilotage(5);
+        onClicked: vueGame.game(5);
     }
     mouseArea7 {
-        onClicked: vueGame.pilotage(6);
+        onClicked: vueGame.game(6);
         }
     mouseArea8{
-        onClicked: vueGame.pilotage(7);
+        onClicked: vueGame.game(7);
     }
     mouseArea9 {
-        onClicked: vueGame.pilotage(8);
+        onClicked: vueGame.game(8);
         }
 }}
 
