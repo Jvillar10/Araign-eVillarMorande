@@ -1,8 +1,54 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.5
 import QtQuick.Dialogs 1.2
+import QtQuick.Window 2.2
 
-ApplicationWindow {
+Window {
+    visible: true
+    width: 800
+    height: 600
+    title: qsTr("Morpion")
+
+    MainForm {
+    anchors.rightMargin: -27
+    anchors.bottomMargin: 0
+    anchors.leftMargin: 0
+    anchors.topMargin: 0
+    anchors.fill: parent
+    mouseArea1 {
+        onClicked: vueGame.pilotage(0);
+        }
+    mouseArea2{
+        onClicked: vueGame.pilotage(1);
+    }
+    mouseArea3 {
+        onClicked: vueGame.pilotage(2);
+        }
+    mouseArea4{
+        onClicked: vueGame.pilotage(3);
+    }
+    mouseArea5 {
+        onClicked: vueGame.pilotage(4);
+        }
+    mouseArea6{
+        onClicked: vueGame.pilotage(5);
+    }
+    mouseArea7 {
+        onClicked: vueGame.pilotage(6);
+        }
+    mouseArea8{
+        onClicked: vueGame.pilotage(7);
+    }
+    mouseArea9 {
+        onClicked: vueGame.pilotage(8);
+        }
+}}
+
+
+
+
+
+/*ApplicationWindow {
     id: ventanaprincipal
     visible: true
     width: 640
@@ -37,7 +83,7 @@ ApplicationWindow {
         window.show();
     }*/
 
-    ApplicationWindow {
+    /*ApplicationWindow {
         id: juego
         width:640
         height:480

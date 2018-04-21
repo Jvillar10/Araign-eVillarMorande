@@ -3,7 +3,32 @@ import QtQuick 2.4
 Item {
     width: 640
     height: 480
-
+    //property alias rectPPal: rectPPal
+    property alias jeton9: jeton9
+    property alias jeton8: jeton8
+    property alias jeton7: jeton7
+    property alias jeton6: jeton6
+    property alias jeton5: jeton5
+    property alias jeton4: jeton4
+    property alias jeton3: jeton3
+    property alias jeton2: jeton2
+    property alias jeton1: jeton1
+    /*property alias image: image
+    property alias text1: text1
+    property alias mouseArea: mouseArea
+    property alias couleurJ2: couleurJ2
+    property alias couleurJ1: couleurJ1
+    property alias joueur2: joueur2
+    property alias joueur1: joueur1*/
+    property alias mouseArea9: mouseArea9
+    property alias mouseArea8: mouseArea8
+    property alias mouseArea7: mouseArea7
+    property alias mouseArea6: mouseArea6
+    property alias mouseArea5: mouseArea5
+    property alias mouseArea4: mouseArea4
+    property alias mouseArea1: mouseArea1
+    property alias mouseArea2: mouseArea2
+    property alias mouseArea3: mouseArea3
     //VER SI FUNCIONA
     Text {
         id: jouer1
@@ -59,6 +84,16 @@ Item {
         border.width: 4
     }
 
+    MouseArea
+    {
+        id: mouseArea
+        anchors.rightMargin: 0
+        anchors.bottomMargin: -1
+        anchors.leftMargin: 0
+        anchors.topMargin: 1
+        anchors.fill: parent
+    }
+
     Rectangle {
         id: rectPhoto
         x: 24
@@ -74,168 +109,194 @@ Item {
             height: 318
             fillMode: Image.Stretch
             source: "tablero.jpg"
+        }
+
 
             Rectangle {
-                id: rectangle1
+                id: jeton1
                 x: 45
                 y: 8
                 width: 31
                 height: 28
-                color: "#ffffff"
+                color: vueGame.gameQML[0]
+                visible: vueGame.game3QML[0]
 
-                MouseArea {
-                    id: mouseArea1
-                    x: -9
-                    y: -6
-                    width: 50
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle2
+                id: jeton2
                 x: 160
                 y: 6
                 width: 34
                 height: 30
-                color: "#ffffff"
+                color: vueGame.gameQML[1]
+                visible: vueGame.game3QML[1]
 
-                MouseArea {
-                    id: mouseArea2
-                    x: -5
-                    y: -6
-                    width: 44
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle3
+                id: jeton3
                 x: 282
-                y: 9
+                y: 8
                 width: 29
                 height: 27
-                color: "#ffffff"
+                color: vueGame.gameQML[2]
+                visible: vueGame.game3QML[2]
 
-                MouseArea {
-                    id: mouseArea3
-                    x: -11
-                    y: -9
-                    width: 50
-                    height: 40
-                    visible: false
-                }
             }
 
             Rectangle {
-                id: rectangle4
-                x: 42
-                y: 145
+                id: jeton4
+                x: 45
+                y: 149
                 width: 36
                 height: 29
-                color: "#ffffff"
+                color: vueGame.gameQML[3]
+                visible: vueGame.game3QML[3]
 
-                MouseArea {
-                    id: mouseArea4
-                    x: -7
-                    y: -6
-                    width: 50
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle5
-                x: 163
+                id: jeton5
+                x: 166
                 y: 149
-                width: 28
+                width: 25
                 height: 25
-                color: "#ffffff"
+                color: vueGame.gameQML[4]
+                visible: vueGame.game3QML[4]
 
-                MouseArea {
-                    id: mouseArea5
-                    x: -8
-                    y: -10
-                    width: 44
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle6
+                id: jeton6
                 x: 282
                 y: 149
                 width: 29
                 height: 25
-                color: "#ffffff"
+                color: vueGame.gameQML[5]
+                visible: vueGame.game3QML[5]
 
-                MouseArea {
-                    id: mouseArea6
-                    x: -11
-                    y: -10
-                    width: 50
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle7
+                id: jeton7
                 x: 46
                 y: 287
                 width: 32
                 height: 23
-                color: "#ffffff"
+                color: vueGame.gameQML[6]
+                visible: vueGame.game3QML[6]
 
-                MouseArea {
-                    id: mouseArea7
-                    x: -11
-                    y: -9
-                    width: 50
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle8
+                id: jeton8
                 x: 166
-                y: 285
+                y: 284
                 width: 29
                 height: 27
-                color: "#ffffff"
+                color: vueGame.gameQML[7]
+                visible: vueGame.game3QML[7]
 
-                MouseArea {
-                    id: mouseArea8
-                    x: -11
-                    y: -7
-                    width: 44
-                    height: 40
-                    visible: false
-                }
+
             }
 
             Rectangle {
-                id: rectangle9
+                id: jeton9
                 x: 282
-                y: 287
+                y: 286
                 width: 26
                 height: 25
-                color: "#ffffff"
+                color: vueGame.gameQML[8]
+                visible: vueGame.game3QML[8]
 
-                MouseArea {
-                    id: mouseArea9
-                    x: -10
-                    y: -8
-                    width: 50
-                    height: 40
-                    visible: false
-                }
             }
         }
+
+
+
+        MouseArea {
+            id: mouseArea9
+            x: 295
+            y: 402
+            width: 50
+            height: 40
+            visible: false
+        }
+
+        MouseArea {
+            id: mouseArea8
+            x: 182
+            y: 402
+            width: 44
+            height: 40
+            visible: false
+        }
+
+        MouseArea {
+            id: mouseArea7
+            x: 60
+            y: 402
+            width: 50
+            height: 40
+            visible: false
+        }
+        MouseArea {
+            id: mouseArea6
+            x: 295
+            y: 267
+            width: 50
+            height: 40
+            visible: false
+        }
+
+        MouseArea {
+            id: mouseArea5
+            x: 182
+            y: 267
+            width: 44
+            height: 40
+            visible: false
+        }
+        MouseArea {
+            id: mouseArea4
+            x: 60
+            y: 267
+            width: 50
+            height: 40
+            visible: false
+        }
+        MouseArea {
+            id: mouseArea3
+            x: 295
+            y: 123
+            width: 50
+            height: 40
+            visible: false
+        }
+        MouseArea {
+            id: mouseArea2
+            x: 66
+            y: 123
+            width: 44
+            height: 40
+            visible: false
+        }
+        MouseArea {
+            id: mouseArea1
+            x: 176
+            y: 123
+            width: 50
+            height: 40
+            visible: false
+        }
+
     }
-}
+
+

@@ -5,5 +5,14 @@
         <file>SecondaryForm.qml</file>
         <file>SecondaryFormForm.ui.qml</file>
         <file>tablero.jpg</file>
+        <file>text.h</file>
+        <file>text.cpp</file>
+        <file>main.cpp</file>
+        <file>joueur.h</file>
+        <file>joueur.cpp</file>
+        <file>jeu.h</file>
+        <file>jeu.cpp</file>
+        <file>jetons.h</file>
+        <file>jetons.cpp</file>
     </qresource>
 </RCC>

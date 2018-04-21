@@ -35,10 +35,10 @@ void Jeu::pilotage(int slot)
             Jeu::seconde_Etape(slot) ;
         }
         victoire() ;
-        /*changePos() ;
+        changePos() ;
         changeBord() ;
         changeVis() ;
-        changeTexte() ;*/
+        //changeTexte() ;
     }
 }
 
@@ -110,3 +110,68 @@ void Jeu::victoire()
         delete[] caseJ2;*/
     }
 }
+
+QList<QString> Jeu::readPos()
+{
+    QList<QString> positions ;
+    for(int i = 0 ; i < 9 ; i++)
+    {
+        positions << "#ffffff" ;
+    }
+    for(int j = 0 ; j < 6 && j < tours_compt ; j++)
+    {
+        if(j % 2 == 0)
+        {
+            positions[jetonsListe[j].getPosition()] = "#cccccc" ;
+        }
+        else
+        {
+            positions[jetonsListe[j].getPosition()] = "#000000" ;
+        }
+    }
+    return positions ;
+}
+
+/*QList<QString> Jeu::readBord()
+    {
+        QList<QString> bordure ;
+        for(int i = 0 ; i < 9 ; i++)
+        {
+            bordure << "#ffffff" ;
+        }
+        for(int j = 0 ; j < 6 && j < tours_compt ; j++)
+        {
+            if(j % 2 == 0)
+            {
+                bordure[jetonsListe[j].getPosition()] = "#000000" ;
+            }
+            else
+            {
+                bordure[jetonsListe[j].getPosition()] = "#cccccc" ;
+            }
+        }
+        return bordure ;
+    }*/
+
+QList<bool> Jeu::readVis()
+{
+    QList<bool> visible ;
+    for(int i = 0 ; i < 9 ; i++)
+    {
+        visible << false ;
+    }
+    for(int j = 0 ; j < 6 && j < tours_compt ; j++)
+    {
+        visible[jetonsListe[j].getPosition()] = true ;
+    }
+    return visible ;
+}
+
+int Jeu::getTour()
+{
+    return tours_compt ;
+}
+/*QString Jeu::currentText()
+{
+    return message.getText(tours_compt, victoire_jeu) ;
+}*/

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("vueGame", &araigne) ;//on envoie int pour pouvoir appeler la fonction depuis l'interface
     engine.load(QUrl(QStringLiteral("qrc:/main.qml"))) ;
-
+    //engine.load(QUrl(QStringLiteral("qrc:/SecondaryForm.qml"))) ;
 
     return app.exec();
 }
