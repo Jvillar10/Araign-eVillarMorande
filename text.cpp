@@ -4,16 +4,17 @@
 
 using namespace std;
 
-
+//Constructeur
 text::text(string joueur_1, string joueur_2)
 {
     Joueur_1 = joueur_1 ;
     Joueur_2 = joueur_2 ;
     joueur_Act(Joueur_1) ;
-   // top_Depart() ;
+
 }
 
 
+//QML
 QString text::getText(int tours_Jeu, bool issue)
 {
     message_Affiche.clear() ;
@@ -43,7 +44,7 @@ void text::gagnant(int joueur)
     {
         gagnant = Joueur_1 ;
     }
-    if (joueur == 2)
+    if (joueur == 0)
     {
         gagnant = Joueur_2 ;
     }

@@ -1,6 +1,8 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.3
+
+//Interface
 Item {
     width: 640
     height: 480
@@ -19,8 +21,8 @@ Item {
     property alias mouseArea: mouseArea
     property alias couleurJ2: couleurJ2
     property alias couleurJ1: couleurJ1
-    //property alias joueur2: joueur2
-    //property alias joueur1: joueur1
+    property alias jouer2: jouer2
+    property alias jouer1: jouer1
     property alias mouseArea9: mouseArea9
     property alias mouseArea8: mouseArea8
     property alias mouseArea7: mouseArea7
@@ -30,7 +32,8 @@ Item {
     property alias mouseArea1: mouseArea1
     property alias mouseArea2: mouseArea2
     property alias mouseArea3: mouseArea3
-    //VER SI FUNCIONA
+
+    //Text Chile
     Text {
         id: jouer1
         x: 506
@@ -47,6 +50,8 @@ Item {
         font.pixelSize: 30
     }
 
+
+    //Text Argentina
     Text {
         id: jouer2
         x: 526
@@ -63,6 +68,8 @@ Item {
         font.pixelSize: 30
     }
 
+
+    //Box Coleur Chile
     Rectangle {
         id: couleurJ1
         x: 425
@@ -84,6 +91,8 @@ Item {
         border.width: 4
     }
 
+
+    //Box Coleur Argentina
     Rectangle {
         id: couleurJ2
         x: 425
@@ -95,6 +104,8 @@ Item {
         border.width: 4
     }
 
+
+    //Text interactive
     Text
     {
         id: text1
@@ -110,6 +121,8 @@ Item {
         font.pixelSize: 19
     }
 
+
+    //Area available pour click
     MouseArea
     {
         id: mouseArea
@@ -117,13 +130,11 @@ Item {
         anchors.bottomMargin: 8
         anchors.leftMargin: 0
         anchors.topMargin: -8
-        //anchors.rightMargin: 0
-        //anchors.bottomMargin: -1
-        //anchors.leftMargin: 0
-        //anchors.topMargin: 1
         anchors.fill: parent
     }
 
+
+    //Grille.jpg et toutes les trucs dans le grille
     Rectangle {
         id: rectPhoto
         x: 20
@@ -319,49 +330,5 @@ Item {
         }
 
     }}
-
-
-/*Item {
-    width: 640
-    height: 480
-
-    property alias button1: buttonJugar
-    property alias button2: buttonSalir
-
-    RowLayout {
-        anchors.verticalCenterOffset: -184
-        anchors.horizontalCenterOffset: -51
-        anchors.centerIn: parent
-
-        Button {
-            id: buttonJugar
-            text: qsTr("JUGAR")
-
-            Button {
-                id: buttonSalir
-                x: 86
-                y: 0
-                text: qsTr("SALIR")
-            }
-        }
-}
-        /*Rectangle {
-           id: rectPhoto
-           x: 30
-           y:20
-           width:360
-           height:360
-           color:"#cccccc"
-*/
-        /*Image {
-            id:photo
-            x:30
-            y:30
-            width:300
-            height:300
-            fillMode: Image.Stretch
-            source:"tablero.jpg"
-           }*/
-
 
 

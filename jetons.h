@@ -2,13 +2,15 @@
 #define JETONS_H
 
 
+//Class pour le pieces
+
 class jetons
 {
 public:
-    jetons();
-    jetons(int player) ;
+    jetons(); //Construteur par defaut
+    jetons(int player) ; //Constructeur
     jetons(int player,int pos) ;
-    void setPosition(int num_position) ;
+    void setPosition(int num_position);
     int getJoueur() ;
     int getPosition() ;
     bool getSelected() ;

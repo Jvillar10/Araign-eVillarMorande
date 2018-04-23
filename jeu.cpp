@@ -6,6 +6,8 @@
 #include <iostream>
 using namespace std;
 
+
+//Constreuctor
 Jeu::Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent): QObject(parent),Joueur1(nom_Joueur1,true),Joueur2(nom_Joueur2,false),message(nom_Joueur1,nom_Joueur2)
 {
     tours_compt = 0 ;
@@ -13,6 +15,11 @@ Jeu::Jeu(string nom_Joueur1, string nom_Joueur2, QObject *parent): QObject(paren
     win_game = false ;
 }
 
+
+/*
+Fonction principal, on commence avec le cas ou personne n'a
+gagne, apres on joue la première etape et puis la deuxieme etape
+*/
 void Jeu::game(int slot)
 {
     bool existsalready = false;
@@ -41,11 +48,15 @@ void Jeu::game(int slot)
     }
 }
 
+
+//Premiere étape, il y a moins de six jetons
 void Jeu::premiere_Etape(int slot)
 {
     jetonsListe[tours_compt] = jetons(tours_compt % 2, slot) ;
 }
 
+
+//Seconde étape. C'est active apres le six jeton
 void Jeu::seconde_Etape(int slot)
 {
     bool existsalready = false, occupiedalready = false ;
@@ -84,6 +95,8 @@ void Jeu::seconde_Etape(int slot)
     }
 }
 
+
+//Pour regarder si il y a victoire
 void Jeu::victoire()
 {
     int i ;
@@ -105,13 +118,18 @@ void Jeu::victoire()
         }
         if (tours_compt % 2 == 1) testVictoire(caseJ1) ;
         else testVictoire(caseJ2) ;
-        delete[] caseJ1 ;	//REVISAR
-        delete[] caseJ2;  //REVISAR
+        delete[] caseJ1 ;
+        delete[] caseJ2;
     }
 }
 
 
-bool Jeu::testVictoire(int *pPos) //CAMBIAR MATEMATICA SI ES POSIBLE
+//Test Victoire
+/*
+On organice la liste des jetons,
+puis test chaque possibilite pour gagner
+*/
+bool Jeu::testVictoire(int *pPos)
 {
     int a ;
     if (pPos[0] > pPos[1])
@@ -140,9 +158,12 @@ bool Jeu::testVictoire(int *pPos) //CAMBIAR MATEMATICA SI ES POSIBLE
     else if (pPos[0]==0 && pPos[1]==3 && pPos[2]==6){win_game=true;}
     else if (pPos[0]==1 && pPos[1]==4 && pPos[2]==7){win_game=true;}
     else if (pPos[0]==4 && pPos[1]==5 && pPos[2]==8){win_game=true;}
+    else if (pPos[0]==2 && pPos[1]==5 && pPos[2]==8){win_game=true;}
 }
 
 
+
+//QML
 
 QList<QString> Jeu::readPos()
 {
@@ -165,8 +186,6 @@ QList<QString> Jeu::readPos()
     return positions ;
 }
 
-
-
 QList<bool> Jeu::readVis()
 {
     QList<bool> visible ;
@@ -185,7 +204,6 @@ int Jeu::getTour()
 {
     return tours_compt ;
 }
-
 
 QString Jeu::currentText()
 {

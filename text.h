@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+//Class pour le interface de QML et les texts
 class text
 {
 public:
@@ -12,7 +13,6 @@ public:
     string get_instructions() ;
     void joueur_Act(string joueur) ;
     void gagnant(int joueur) ;
-    void top_Depart() ;
     void dephasage() ;
     void fin() ;
 private:

@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+//Class pour le joueur
 class Joueur
 {
 public:
