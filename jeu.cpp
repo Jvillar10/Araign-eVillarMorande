@@ -157,7 +157,6 @@ bool Jeu::testVictoire(int *pPos)
     else if (pPos[0]==2 && pPos[1]==4 && pPos[2]==6){win_game=true;}
     else if (pPos[0]==0 && pPos[1]==3 && pPos[2]==6){win_game=true;}
     else if (pPos[0]==1 && pPos[1]==4 && pPos[2]==7){win_game=true;}
-    else if (pPos[0]==4 && pPos[1]==5 && pPos[2]==8){win_game=true;}
     else if (pPos[0]==2 && pPos[1]==5 && pPos[2]==8){win_game=true;}
 }
 
